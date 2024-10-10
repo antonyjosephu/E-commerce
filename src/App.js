@@ -12,6 +12,7 @@ import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
 import kids_banner from './Components/Assets/banner_kids.png'
 import { useEffect } from 'react';
+import { auth } from './firebase';
 function App() {
   const navigate=useNavigate();
   useEffect(()=>{
