@@ -1,7 +1,7 @@
 
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
-import { BrowserRouter,Routes,Route, } from 'react-router-dom';
+import { BrowserRouter,Routes,Route, useNavigate, } from 'react-router-dom';
 import Shop from './Pages/Shop';
 import ShopCategory from './Pages/ShopCategory';
 import Product from './Pages/Product';
@@ -11,7 +11,20 @@ import Footer from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
 import kids_banner from './Components/Assets/banner_kids.png'
+import { useEffect } from 'react';
 function App() {
+  const navigate=useNavigate();
+  useEffect(()=>{
+  onAuthStateChanged(auth, async (user)=>{
+    if(user){
+      console.log("Logged In");
+      navigate('/');
+    }else{
+      console.log("Logged out");
+      navigate('/login')
+    }
+  },[]);
+  })
   return (
     <div>
       <BrowserRouter>
