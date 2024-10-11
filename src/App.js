@@ -13,6 +13,7 @@ import women_banner from './Components/Assets/banner_women.png'
 import kids_banner from './Components/Assets/banner_kids.png'
 import { useEffect } from 'react';
 import { auth } from './firebase';
+import { onAuthStateChanged } from 'firebase/auth/cordova';
 function App() {
   const navigate=useNavigate();
   useEffect(()=>{
